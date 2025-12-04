@@ -43,9 +43,8 @@ dependencies {
     implementation 'org.flywaydb:flyway-database-postgresql'
 
     implementation 'io.arconia:arconia-spring-boot-starter'
+    implementation "io.arconia:arconia-opentelemetry-spring-boot-starter"
 
-	runtimeOnly 'io.micrometer:micrometer-registry-prometheus'
-	runtimeOnly "io.opentelemetry.javaagent:opentelemetry-javaagent:${otelVersion}"
 	runtimeOnly 'org.postgresql:postgresql'
 	annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
 
@@ -59,7 +58,9 @@ dependencies {
 
     // Dev Services
     testAndDevelopmentOnly "io.arconia:arconia-dev-services-postgresql"
+    testAndDevelopmentOnly "io.arconia:arconia-dev-services-lgtm"
     developmentOnly "org.springframework.boot:spring-boot-devtools"
+
 }
 
 dependencyManagement {
